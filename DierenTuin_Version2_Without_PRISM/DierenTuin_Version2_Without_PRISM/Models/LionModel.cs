@@ -8,8 +8,9 @@ using System.Text;
 
 namespace DierenTuin_Version2_Without_PRISM.Models
 {
-    class LionModel : MainAnimalStructure<string>
+    public sealed class LionModel : MainAnimalStructure<string>
     {
+        #region
         [Key]
 
         public new string id { get; set; }
@@ -310,7 +311,7 @@ namespace DierenTuin_Version2_Without_PRISM.Models
                 AssignSocialType(value);
         }
 
-
+        #endregion
         public LionModel()
         {
             MainAnimalStructure<string>.InheritedOrNot = true;

@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DierenTuin_Version2_Without_PRISM"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        mc:Ignorable="d" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <StackPanel Background="WhiteSmoke">
+        <Grid Height="40">
+            
+        </Grid>
+        <Grid Height="100">
+        </Grid>
+        <Grid Height=" 460" Background="Aquamarine">
+        </Grid>
+    </StackPanel>
 </Window>

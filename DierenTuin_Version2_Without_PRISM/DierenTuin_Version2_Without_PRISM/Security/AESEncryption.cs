@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DierenTuin_Version2_Without_PRISM.Security
 {
-    class EmptySecurity
+    class AESencryption
     {
+
     }
 }

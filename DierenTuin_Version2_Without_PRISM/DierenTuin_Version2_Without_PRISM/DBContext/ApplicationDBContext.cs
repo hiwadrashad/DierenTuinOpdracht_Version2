@@ -6,9 +6,9 @@ using System.Text;
 
 namespace DierenTuin_Version2_Without_PRISM.DBContext
 {
-    class ApplicationDBContext 
+    class ApplicationDBContext
     {
-        public class ApplicationDbContext 
+        public class ApplicationDbContext
         {
             private static ApplicationDbContext _dbContext;
             public ApplicationDbContext()
@@ -35,4 +35,5 @@ namespace DierenTuin_Version2_Without_PRISM.DBContext
                 return new ApplicationDbContext();
             }
         }
+    }
 }

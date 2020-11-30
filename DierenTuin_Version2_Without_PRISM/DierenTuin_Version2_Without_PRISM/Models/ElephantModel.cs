@@ -8,8 +8,10 @@ using System.Text;
 
 namespace DierenTuin_Version2_Without_PRISM.Models
 {
-    class ElephantModel : MainAnimalStructure<string>
+    public sealed class ElephantModel : MainAnimalStructure<string>
     {
+        #region
+
         [Key]
 
         public new string id { get; set; }
@@ -310,7 +312,7 @@ namespace DierenTuin_Version2_Without_PRISM.Models
                 AssignSocialType(value);
         }
 
-
+        #endregion
         public ElephantModel()
         {
             MainAnimalStructure<string>.InheritedOrNot = true;

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="3.2.0" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
