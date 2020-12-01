@@ -172,5 +172,81 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
                 item.EatForEnergy();
             }
         }
+
+        public void AddApe()
+        {
+            _apes.Add(new ApeModel
+            {
+                id = Guid.NewGuid().ToString(),
+                AmountOfKids = 10,
+                MaleToFemaleRatio = 0.6,
+                AmountOfAdults = 23,
+                AgeOfAnimals = new Dictionary<string, int> { { "Susan", 12 }, { "anabel", 10 } },
+                AnimalSleepType = Enumeration.EnumAnimalSleepType.Diurnal,
+                AnimalSubSpecies = Enumeration.EnumAnimalSubSpecies.Hominidea,
+                AnimalType = Enumeration.EnumAnimalType.Monkey,
+                FoodType = Enumeration.EnumFoodType.Banana,
+                SocialType = Enumeration.EnumSocialType.Social
+            });
+        }
+
+        public void AddLion()
+        {
+            _lions.Add(
+                 new LionModel
+                 {
+                     id = Guid.NewGuid().ToString(),
+                     AmountOfKids = 2,
+                     MaleToFemaleRatio = 0.8,
+                     AmountOfAdults = 6,
+                     AgeOfAnimals = new Dictionary<string, int> { { "Sarah", 24 }, { "Bob", 12 } },
+                     AnimalSleepType = Enumeration.EnumAnimalSleepType.Nocturnal,
+                     AnimalSubSpecies = Enumeration.EnumAnimalSubSpecies.Felis,
+                     AnimalType = Enumeration.EnumAnimalType.Lion,
+                     FoodType = Enumeration.EnumFoodType.Meat,
+                     SocialType = Enumeration.EnumSocialType.Social
+                 });
+        }
+
+        public void AddElephant()
+        {
+            _elephants.Add(new ElephantModel
+            {
+                id = Guid.NewGuid().ToString(),
+                AmountOfKids = 3,
+                MaleToFemaleRatio = 0.4,
+                AmountOfAdults = 2,
+                AgeOfAnimals = new Dictionary<string, int> { { "Lucy", 56 }, { "Marelin", 78 } },
+                AnimalSleepType = Enumeration.EnumAnimalSleepType.Nocturnal,
+                AnimalSubSpecies = Enumeration.EnumAnimalSubSpecies.Loxodonta,
+                AnimalType = Enumeration.EnumAnimalType.Elephant,
+                FoodType = Enumeration.EnumFoodType.Grass,
+                SocialType = Enumeration.EnumSocialType.Social
+            }
+                );
+        }
+
+        public void RemoveAllStarvedAnimals()
+        {
+            var starvedapes = _apes.Where(a => a.Energy <= 0);
+            foreach (var item in starvedapes)
+            {
+               var chosenape =_apes.Where(a => a.id == item.id).FirstOrDefault();
+                _apes.Remove(chosenape);
+            }
+
+            var starvedlions = _lions.Where(a => a.Energy <= 0);
+            foreach (var item in starvedlions)
+            {
+                var chosenlions = _lions.Where(a => a.id == item.id).FirstOrDefault();
+                _lions.Remove(chosenlions);
+            }
+            var starvedelephants = _elephants.Where(a => a.Energy <= 0);
+            foreach (var item in starvedelephants)
+            {
+                var chosenelephants = _elephants.Where(a => a.id == item.id).FirstOrDefault();
+                _elephants.Remove(chosenelephants);
+            }
+        }
     }
 }
