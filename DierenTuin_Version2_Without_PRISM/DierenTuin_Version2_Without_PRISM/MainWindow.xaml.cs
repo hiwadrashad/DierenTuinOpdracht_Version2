@@ -51,6 +51,7 @@ namespace DierenTuin_Version2_Without_PRISM
                 Counter1.Visibility = Visibility.Hidden;
                 Counter2.Visibility = Visibility.Hidden;
                 Counter3.Visibility = Visibility.Hidden;
+                BoxWithInfo.Visibility = Visibility.Visible;
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (AggregateException ex)
@@ -100,7 +101,8 @@ namespace DierenTuin_Version2_Without_PRISM
                 Counter3.Visibility = Visibility.Visible;
                 Counter1.Content = "CPU:" + " " + (int)PerformanceCounterClass.PerformanceCounterClass.GetPerformanceCounter().GetFirstPerformanceCounter().NextValue() + " " + "%";
                 Counter2.Content = "Available Memory" + " " + (int)PerformanceCounterClass.PerformanceCounterClass.GetPerformanceCounter().GetSecondPerformanceCounter().NextValue() + " " + "MB";
-                Counter3.Content = "System Up Time:" + " " + (int)PerformanceCounterClass.PerformanceCounterClass.GetPerformanceCounter().GetSecondPerformanceCounter().NextValue() / 60 / 60 + "Hours";
+                Counter3.Content = "System Up Time:" + " " + (int)PerformanceCounterClass.PerformanceCounterClass.GetPerformanceCounter().GetSecondPerformanceCounter().NextValue() / 60 / 60 + " Hours";
+                BoxWithInfo.Visibility = Visibility.Hidden;
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (AggregateException ex)
@@ -144,6 +146,7 @@ namespace DierenTuin_Version2_Without_PRISM
                 Counter1.Visibility = Visibility.Hidden;
                 Counter2.Visibility = Visibility.Hidden;
                 Counter3.Visibility = Visibility.Hidden;
+                BoxWithInfo.Visibility = Visibility.Visible;
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (AggregateException ex)
