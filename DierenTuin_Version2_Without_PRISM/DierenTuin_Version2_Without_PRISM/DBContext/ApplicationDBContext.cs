@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DierenTuin_Version2_Without_PRISM.DBContext
 {
-    class ApplicationDBContext
+    class ApplicationDBContext : DbContext
     {
         public class ApplicationDbContext
         {

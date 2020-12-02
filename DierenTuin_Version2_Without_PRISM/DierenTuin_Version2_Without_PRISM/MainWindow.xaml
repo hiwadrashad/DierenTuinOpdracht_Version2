@@ -14,16 +14,16 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0">
-                <Button Content="APP PERFORMANCE" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></Button>
-                <Button Content="ANIMALS" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"></Button>
-                <Button  Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                <Button Content="APP PERFORMANCE" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Click="App_Performance_Clicked"></Button>
+                <Button Content="ANIMALS" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA2A2A2" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Click="Animal_Header_Clicked"></Button>
+                <Button  Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Quit_Clicked">
                     <materialDesign:PackIcon Kind="Power" Foreground="#FFA2A2A2" Width="25" Height="25"></materialDesign:PackIcon>
                 </Button>
 
             </StackPanel>
         </Grid>
         <Grid Height="100">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="200 0">
+            <StackPanel x:Name="AnimalChoices" Orientation="Horizontal" VerticalAlignment="Top" Margin="200 0">
                 <Button Uid="0" Width="150" Content="ALL" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Animal_Clicked"></Button>
                 <Button Uid="1" Width="150" Content="APES" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Animal_Clicked"></Button>
                 <Button Uid="2" Width="150" Content="ELEPHANTS" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Animal_Clicked"></Button>
@@ -34,6 +34,9 @@
         <Grid x:Name="GridMain" Height=" 460" Background="Aquamarine">
             <ListBox x:Name="BoxWithInfo" Width="450" Foreground="#FF2196F3" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="230" Background="WhiteSmoke" HorizontalAlignment="Left"  Margin="150 80 100 100" >
             </ListBox>
+            <Label x:Name="Counter1" Width="300" Height="50" HorizontalAlignment="Left" Margin="150, -80, 100, 100" Background="WhiteSmoke" Foreground="#FF2196F3" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+            <Label x:Name="Counter2" Width="300" Height="50" HorizontalAlignment="Left" Margin="150, 50, 100, 100" Background="WhiteSmoke" Foreground="#FF2196F3" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+            <Label x:Name="Counter3" Width="300" Height="50" HorizontalAlignment="Left" Margin="150, 180, 100, 100" Background="WhiteSmoke" Foreground="#FF2196F3" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
             <Button x:Name="FeedApes" Width="150" Height="50 " Content="FEED APES" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 50 200 0" Click="Feed_Apes" ></Button>
             <Button x:Name="FeedAllAnimals" Width="150" Height="50 " Content="FEED ALL ANIMALS" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -100 200 0" Click="Feed_All_Animals" ></Button>
             <Button x:Name="StartProgram" Width="150" Height="50 " Content="START PROGRAM" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -250 200 0" Click="Start_Application" ></Button>
