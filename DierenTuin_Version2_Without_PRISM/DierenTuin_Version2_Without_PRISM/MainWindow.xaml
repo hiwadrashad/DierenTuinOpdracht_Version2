@@ -34,14 +34,14 @@
         <Grid x:Name="GridMain" Height=" 460" Background="Aquamarine">
             <ListBox x:Name="BoxWithInfo" Width="450" Foreground="#FF2196F3" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="230" Background="WhiteSmoke" HorizontalAlignment="Left"  Margin="150 80 100 100" >
             </ListBox>
-            <Button x:Name="FeedApes" Width="150" Height="50 " Content="FEED APES" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 50 200 0" ></Button>
-            <Button x:Name="FeedAllAnimals" Width="150" Height="50 " Content="FEED ALL ANIMALS" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -100 200 0" ></Button>
-            <Button x:Name="StartProgram" Width="150" Height="50 " Content="START PROGRAM" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -250 200 0" Click="Test_Click" ></Button>
-            <Button x:Name="AddMonkey" Width="150" Height="50 " Content="ADD MONKEY" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 200 200 0" ></Button>
-            <Button x:Name="AddLion" Width="150" Height="50 " Content="ADD LION" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 200 20 0" ></Button>
-            <Button x:Name="FeedLion" Width="150" Height="50 " Content="FEED LION" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 50 20 0" ></Button>
-            <Button x:Name="AddElephant" Width="150" Height="50 " Content="ADD ELEPHANT" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -100 20 0" ></Button>
-            <Button x:Name="FeedElephant" Width="150" Height="50 " Content="FEED ELEPHANT" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -250 20 0" ></Button>
+            <Button x:Name="FeedApes" Width="150" Height="50 " Content="FEED APES" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 50 200 0" Click="Feed_Apes" ></Button>
+            <Button x:Name="FeedAllAnimals" Width="150" Height="50 " Content="FEED ALL ANIMALS" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -100 200 0" Click="Feed_All_Animals" ></Button>
+            <Button x:Name="StartProgram" Width="150" Height="50 " Content="START PROGRAM" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -250 200 0" Click="Start_Application" ></Button>
+            <Button x:Name="AddMonkey" Width="150" Height="50 " Content="ADD MONKEY" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 200 200 0" Click="Add_Apes"></Button>
+            <Button x:Name="AddLion" Width="150" Height="50 " Content="ADD LION" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 200 20 0" Click="Add_Lion"></Button>
+            <Button x:Name="FeedLion" Width="150" Height="50 " Content="FEED LION" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 50 20 0" Click="Feed_Lions"></Button>
+            <Button x:Name="AddElephant" Width="150" Height="50 " Content="ADD ELEPHANT" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -100 20 0" Click="Add_Elephant"></Button>
+            <Button x:Name="FeedElephant" Width="150" Height="50 " Content="FEED ELEPHANT" Foreground="#FF2196F3" Background="WhiteSmoke"  BorderBrush="{x:Null}"  HorizontalAlignment="Right" Margin="200 -250 20 0" Click="Feed_Elephants" ></Button>
         </Grid>
     </StackPanel>
 </Window>

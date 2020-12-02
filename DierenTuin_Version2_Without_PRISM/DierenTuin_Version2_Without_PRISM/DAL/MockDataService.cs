@@ -39,7 +39,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
                   id = Guid.NewGuid().ToString(), AmountOfKids = 10, MaleToFemaleRatio = 0.6, AmountOfAdults = 23, AgeOfAnimals = new Dictionary<string, int> { {"Susan",12 }, {"anabel", 10 } }, 
                   AnimalSleepType = Enumeration.EnumAnimalSleepType.Diurnal, AnimalSubSpecies = Enumeration.EnumAnimalSubSpecies.Hominidea, AnimalType = Enumeration.EnumAnimalType.Monkey, FoodType = Enumeration.EnumFoodType.Banana, 
                   SocialType =  Enumeration.EnumSocialType.Social
-              }
+              },
             };
 
             _elephants = new List<ElephantModel>()
@@ -114,7 +114,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         {
             foreach (var item in _apes)
             {
-                item.UseEnergy();
+                item.Energy = item.Energy - 2;
             }
         }
 
@@ -122,7 +122,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         {
             foreach (var item in _elephants)
             {
-                item.UseEnergy();
+                item.Energy = item.Energy - 5;
             }
         }
 
@@ -130,7 +130,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         {
             foreach (var item in _lions)
             {
-                item.UseEnergy();
+                item.Energy = item.Energy - 10;
             }
         }
 
@@ -153,7 +153,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         { 
           foreach(var item in _apes)
           {
-                item.EatForEnergy(); 
+                item.Energy = item.Energy + (10 * 25);
           }
         }
 
@@ -161,7 +161,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         {
             foreach (var item in _elephants)
             {
-                item.EatForEnergy();
+                item.Energy = item.Energy + (50 * 25);
             }
         }
 
@@ -169,7 +169,7 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         {
             foreach (var item in _lions)
             {
-                item.EatForEnergy();
+                item.Energy = item.Energy + (25 * 25);
             }
         }
 
@@ -229,20 +229,20 @@ namespace DierenTuin_Version2_Without_PRISM.DAL
         public void RemoveAllStarvedAnimals()
         {
             var starvedapes = _apes.Where(a => a.Energy <= 0);
-            foreach (var item in starvedapes)
+            foreach (var item in starvedapes.ToList())
             {
                var chosenape =_apes.Where(a => a.id == item.id).FirstOrDefault();
                 _apes.Remove(chosenape);
             }
 
             var starvedlions = _lions.Where(a => a.Energy <= 0);
-            foreach (var item in starvedlions)
+            foreach (var item in starvedlions.ToList())
             {
                 var chosenlions = _lions.Where(a => a.id == item.id).FirstOrDefault();
                 _lions.Remove(chosenlions);
             }
             var starvedelephants = _elephants.Where(a => a.Energy <= 0);
-            foreach (var item in starvedelephants)
+            foreach (var item in starvedelephants.ToList())
             {
                 var chosenelephants = _elephants.Where(a => a.id == item.id).FirstOrDefault();
                 _elephants.Remove(chosenelephants);

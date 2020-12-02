@@ -43,6 +43,7 @@ namespace DierenTuin_Version2_Without_PRISM.MainFunctions
         
         public  class UseEnergyAllAnimals
         {
+       
             public void UseEnergyAllAnimalsPerTick()
             {
                 IDataService _dataService = MockDataService.GetMockDataService();

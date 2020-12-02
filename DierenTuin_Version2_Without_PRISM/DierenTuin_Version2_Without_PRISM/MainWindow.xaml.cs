@@ -17,6 +17,7 @@ using System.Runtime.CompilerServices;
 using DierenTuin_Version2_Without_PRISM.Models;
 using DierenTuin_Version2_Without_PRISM.Interfaces;
 using DierenTuin_Version2_Without_PRISM.DAL;
+using DierenTuin_Version2_Without_PRISM.Timers;
 
 namespace DierenTuin_Version2_Without_PRISM
 {
@@ -29,19 +30,78 @@ namespace DierenTuin_Version2_Without_PRISM
 
         public MainWindow()
         {
+            _dataService = MockDataService.GetMockDataService();
+            StaticResources.StaticMainwindow.StaticMainWindowStorage = this;
             DataContext = this;
             InitializeComponent();
         }
 
-        private void Test_Click(object sender, RoutedEventArgs e)
+        public void EnterAllDataFromDataServiceInListBox()
         {
-            ListBoxItem item = new ListBoxItem();
-            ApeModel ape = new ApeModel();
-            string StoreNameAndEnergy = ape.AnimalType.ToString();
-            StoreNameAndEnergy = StoreNameAndEnergy + ": " + ape.Energy;
-            item.Content = StoreNameAndEnergy;
-            BoxWithInfo.Items.Add(item);
+            BoxWithInfo.Items.Clear();
+            foreach (var item in _dataService.GetAllApes())
+            {
+                BoxWithInfo.Items.Add(MainFunctions.MainFunctions.ReturnListBoxItems.ReturnListBoxItemWithProperStringInput(item));
+            }
+
+            foreach (var item in _dataService.GetAllElephants())
+            {
+                BoxWithInfo.Items.Add(MainFunctions.MainFunctions.ReturnListBoxItems.ReturnListBoxItemWithProperStringInput(item));
+            }
+
+            foreach (var item in _dataService.GetAllLions())
+            {
+                BoxWithInfo.Items.Add(MainFunctions.MainFunctions.ReturnListBoxItems.ReturnListBoxItemWithProperStringInput(item));
+            } 
         }
+
+        private void Start_Application(object sender, RoutedEventArgs e)
+        {
+            TimerWithExecutingMethod item = new TimerWithExecutingMethod();
+            item.SetInterval();
+
+        }
+
+        private void Feed_All_Animals(object sender, RoutedEventArgs e)
+        {
+            _dataService.EatAllApes();
+            _dataService.EatAllElephants();
+            _dataService.EatAllLions();
+
+        }
+
+        private void Feed_Apes(object sender, RoutedEventArgs e)
+        {
+            _dataService.EatAllApes();
+        }
+
+        private void Feed_Lions(object sender, RoutedEventArgs e)
+        {
+            _dataService.EatAllLions();
+        }
+
+        private void Feed_Elephants(object sender, RoutedEventArgs e)
+        {
+            _dataService.EatAllElephants();
+        }
+
+        private void Add_Apes(object sender, EventArgs e)
+        {
+            _dataService.AddApe();
+        }
+
+        private void Add_Lion(object sender, EventArgs e)
+        {
+            _dataService.AddLion();
+        }
+
+        private void Add_Elephant(object sender, EventArgs e)
+        {
+            _dataService.AddElephant();
+        }
+        //private void Test_Click2(object sender, RoutedEventArgs e)
+        //{
+        //}
 
         private void Animal_Clicked(object sender, RoutedEventArgs e)
         {
@@ -97,6 +157,11 @@ namespace DierenTuin_Version2_Without_PRISM
                     FeedElephant.Visibility = Visibility.Visible;
                     break;
             }
+        }
+
+        private void AddMonkey_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
