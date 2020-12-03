@@ -136,7 +136,7 @@ namespace DierenTuin_Version2_Without_PRISM.ModelStructures
 
         public virtual EnumSocialType SocialType { get; set; }
         
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
